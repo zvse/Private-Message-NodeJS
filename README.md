@@ -1,3 +1,5 @@
+#Pure fork of the https://github.com/jez500/Private-Message-NodeJS with the package name change
+
 # Private Message NodeJS
 
 Instant updates and notifications for the [Private Message Messenger module](https://github.com/jez500/Private-Message-Messenger)
@@ -46,23 +48,8 @@ $(window).on('pm:threads:poll', function(event, data) {
 
 ## Installation
 
-### 1. Add repo and install Private Message NodeJS with deps
-
-Add the repo to your `composer.json`
-
-```
-    "repositories": [
-        ...
-        {
-            "type": "git",
-            "url": "https://github.com/jez500/Private-Message-NodeJS.git"
-        }
-    ],
-
-```
-
-Then...
-`composer require drupal/private_message_nodejs`
+### Just type 
+`composer require zvse/private_message_nodejs`
 
 And...
 `drush en -y private_message_nodejs`
