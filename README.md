@@ -1,4 +1,6 @@
-# Pure fork of the https://github.com/jez500/Private-Message-NodeJS with the package name change
+# FOrk info
+
+Pure fork of the https://github.com/jez500/Private-Message-NodeJS with the package name change
 
 # Private Message NodeJS
 
