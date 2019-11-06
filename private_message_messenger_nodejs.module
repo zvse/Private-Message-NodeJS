@@ -22,7 +22,7 @@ function private_message_messenger_nodejs_nodejs_handlers_info() {
  * Implements hook_entity_update().
  */
 function private_message_messenger_nodejs_entity_update(EntityInterface $entity) {
-  if ($entity->getEntityTypeId() == 'private_message_thread') {
+  if ($entity->getEntityTypeId() == 'private_message_thread' && count($entity->getMessages()) !== count($entity->original->getMessages())) {
     foreach ($entity->getMembers() as $member) {
       private_message_messenger_nodejs_thread_updated_notify($member->id(), $entity);
     }
