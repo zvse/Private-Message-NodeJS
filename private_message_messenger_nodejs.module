@@ -73,7 +73,7 @@ function private_message_messenger_nodejs_thread_updated_notify($uid, EntityInte
       'snippet' => $data['snippet'],
       'image' => $data['image'],
       'url' => $data['url'],
-      'messageObject' => $last_message,
+      'messageId' => $last_message->id(),
       'recipient' => $uid,
     ],
     'channel' => 'nodejs_user_' . $uid,
