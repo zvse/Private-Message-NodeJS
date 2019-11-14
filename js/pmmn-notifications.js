@@ -1,4 +1,4 @@
-;(function ($, Drupal, drupalSettings, Notification, window) {
+;(function ($, Drupal, drupalSettings, window) {
 
   "use strict";
 
@@ -41,17 +41,17 @@
      */
     this.checkPermission = function() {
       if (window.hasOwnProperty("Notification")) {
-        var permission = Notification.permission;
+        var permission = window.Notification.permission;
         if (permission === "granted") {
           return true;
         }
+        if (permission !== "denied") {
+          window.Notification.requestPermission().then(function () {
+            return true;
+          })
+        }
       }
-
-      if (permission !== "denied") {
-        Notification.requestPermission().then(function () {
-          return true;
-        })
-      }
+      return false;
     };
 
     /**
@@ -63,7 +63,7 @@
           body: body,
           icon: icon
         };
-        var n = new Notification(title, options);
+        var n = new window.Notification(title, options);
         if (link) {
           n.onclick = function () {
             window.open(link);
@@ -95,4 +95,4 @@
     return this;
   }
 
-})(jQuery, Drupal, drupalSettings, Notification, window);
+})(jQuery, Drupal, drupalSettings, window);
